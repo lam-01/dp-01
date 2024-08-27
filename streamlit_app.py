@@ -1,5 +1,10 @@
-import streamlit as st
-
-st.title('🎈 App Name')
-
-st.write('Hello world!')
+streamlit
+numpy
+pandas
+scikit-learn
+spacy==3.7.2
+thinc
+smote
+seaborn
+matplotlib
+imbalanced-learn

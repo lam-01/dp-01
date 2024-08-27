@@ -172,7 +172,7 @@ def predict_gpa(mode, X_test):
 def gpa_to_grade_class(gpa):
     if gpa >= 3.5:
         return 'A'
-    elif gpa >= 3.0:
+    elif gpa > 3.0:
         return 'B'
     elif gpa >= 2.5:
         return 'C'

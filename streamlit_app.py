@@ -162,7 +162,7 @@ clf.fit(X_train, y_train)
 # )
 
 # Huấn luyện mô hình với các tham số tối ưu
-best_rf.fit(X_train, y_train)
+#best_rf.fit(X_train, y_train)
 
 
 # Hàm dự đoán

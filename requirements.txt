@@ -8,3 +8,4 @@ smote
 seaborn
 matplotlib
 imbalanced-learn
+GridSearchCV

@@ -1,1 +1,10 @@
 streamlit>=1.26.0
+numpy
+pandas
+scikit-learn
+spacy==3.7.2
+thinc
+smote
+seaborn
+matplotlib
+imbalanced-learn

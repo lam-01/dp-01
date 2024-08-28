@@ -3,13 +3,10 @@ import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LinearRegression
-from sklearn.tree import DecisionTreeRegressor
 from sklearn.ensemble import RandomForestRegressor
-from sklearn.svm import SVR
-from sklearn.neighbors import KNeighborsRegressor
 from imblearn.over_sampling import SMOTE
 from sklearn.preprocessing import OneHotEncoder
+from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import GridSearchCV
 import pickle
 # import spacy
@@ -35,7 +32,13 @@ df = pd.read_csv('https://raw.githubusercontent.com/lam-01/Data/main/Student_per
 # Thực hiện One-Hot Encoding cho các biến phân loại
 # st.subheader("Áp dụng One-Hot Encoding cho các biến phân loại")
 cat_cols = ['Sports', 'Volunteering', 'ParentalSupport', 'Music', 'Extracurricular', 'ParentalEducation', 'Gender', 'Tutoring', 'Ethnicity']
-df_encoded = pd.get_dummies(df, columns=cat_cols, drop_first=True)
+df_encoded = pd.get_dummies(df, columns=cat_cols, drop_first=True)# Khởi tạo scaler
+
+
+num_cols=['StudyWeekly','Absences']
+scaler = StandardScaler()
+# Áp dụng chuẩn hóa
+df[num_cols] = scaler.fit_transform(df[num_cols])
 
 # st.write("Dữ liệu sau khi áp dụng One-Hot Encoding:")
 # st.write(df_encoded.head())
@@ -54,7 +57,6 @@ y = df_encoded['GradeClass']
 # Áp dụng SMOTE để cân bằng dữ liệu
 smote = SMOTE(sampling_strategy='auto')
 X_res, y_res = smote.fit_resample(X, y)
-
 
 # st.write(f"Train set size after SMOTE: {X_res.shape[0]} samples")
 

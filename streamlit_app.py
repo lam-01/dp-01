@@ -35,10 +35,9 @@ cat_cols = ['Sports', 'Volunteering', 'ParentalSupport', 'Music', 'Extracurricul
 df_encoded = pd.get_dummies(df, columns=cat_cols, drop_first=True)# Khởi tạo scaler
 
 
-num_cols=['StudyWeekly','Absences']
+num_cols = ['StudyTimeWeekly', 'Absences']
 scaler = StandardScaler()
-# Áp dụng chuẩn hóa
-df[num_cols] = scaler.fit_transform(df[num_cols])
+df_encoded[num_cols] = scaler.fit_transform(df_encoded[num_cols])
 
 # st.write("Dữ liệu sau khi áp dụng One-Hot Encoding:")
 # st.write(df_encoded.head())

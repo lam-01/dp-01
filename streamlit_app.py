@@ -94,6 +94,16 @@ with st.sidebar:
     extracurricular_selected = st.selectbox('Extracurricular', ('Yes', 'No'))
     extracurricular_encoded = extracurricular_map[extracurricular_selected]
 
+   
+    music_map = {"Yes": 1, "No": 0}
+    music_selected = st.selectbox('Music', ('Yes', 'No'))
+    music_encoded = music_map[music_selected]
+
+   
+    sport_map = {"Yes": 1, "No": 0}
+    sport_selected = st.selectbox('Sport', ('Yes', 'No'))
+    sport_encoded = sport_map[sport_selected]
+   
     volunteering_map = {"Yes": 1, "No": 0}
     volunteering_selected = st.selectbox('Volunteering', ('Yes', 'No'))
     volunteering_encoded = volunteering_map[volunteering_selected]
@@ -110,6 +120,8 @@ with st.sidebar:
         'Tutoring': tutoring_encoded,
         'ParentalSupport': parental_support_encoded,
         'Extracurricular': extracurricular_encoded,
+        'Music':music_encoded,
+        'Sport':sport_encoded,
         'Volunteering': volunteering_encoded,
         'StudyTimeWeekly': study_time_weekly,
         'Absences': absences,

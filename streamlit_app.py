@@ -181,7 +181,7 @@ clf.fit(X_train, y_train)
 def predict_gpa(mode, X_test):
     prediction = mode.predict(X_test)
     return prediction[0]
-Hàm chuyển đổi GPA sang GradeClass
+#Hàm chuyển đổi GPA sang GradeClass
 def gpa_to_grade_class(gpa):
     if gpa >= 3.5:
         return 'A'

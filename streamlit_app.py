@@ -182,8 +182,8 @@ clf.fit(X_train, y_train)
 #     prediction = mode.predict(X_test)
 #     return prediction[0]
 # Hàm dự đoán lớp điểm
-def predict_grade_class(model, input_features):
-    prediction = model.predict(input_features)
+def predict_grade_class(model, X_test):
+    prediction = model.predict(X_test)
     return int(prediction[0])
 
 #Hàm chuyển đổi GPA sang GradeClass
@@ -207,7 +207,7 @@ def predict_grade_class(model, input_features):
 #     st.success(f'Grade Class: {grade_class}')
 # Dự đoán GradeClass khi nhấn nút Predict
 if st.button('Dự đoán'):
-    grade_class_prediction = predict_grade_class(clf, input_df)
+    grade_class_prediction = predict_grade_class(clf, X_test)
     # Mapping từ số nguyên (0, 1, 2, 3, 4) sang các lớp điểm 'A', 'B', 'C', 'D', 'F'
     grade_class_map = {0: 'A', 1: 'B', 2: 'C', 3: 'D', 4: 'F'}
     predicted_grade_class = grade_class_map[grade_class_prediction]

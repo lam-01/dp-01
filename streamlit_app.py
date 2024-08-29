@@ -185,17 +185,17 @@ def predict_gradeclass(mode, X_test):
     prediction = mode.predict(X_test)
     return prediction[0]
 # Hàm chuyển đổi GPA sang GradeClass
-def gpa_to_grade_class(gpa):
-    if gpa >= 3.5:
-        return 'A'
-    elif gpa > 3.0:
-        return 'B'
-    elif gpa >= 2.5:
-        return 'C'
-    elif gpa >= 2.0:
-        return 'D'
-    else:
-        return 'F'
+# def gpa_to_grade_class(gpa):
+#     if gpa >= 3.5:
+#         return 'A'
+#     elif gpa > 3.0:
+#         return 'B'
+#     elif gpa >= 2.5:
+#         return 'C'
+#     elif gpa >= 2.0:
+#         return 'D'
+#     else:
+#         return 'F'
 
 # Dự đoán GPA khi nhấn nút Predict
 if st.button('Dự đoán'):

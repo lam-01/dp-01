@@ -178,7 +178,10 @@ clf.fit(X_train, y_train)
 # best_rf.fit(X_train, y_train)
 
 # Hàm dự đoán
-def predict_gpa(mode, X_test):
+# def predict_gpa(mode, X_test):
+#     prediction = mode.predict(X_test)
+#     return prediction[0]
+def predict_gradeclass(mode, X_test):
     prediction = mode.predict(X_test)
     return prediction[0]
 # Hàm chuyển đổi GPA sang GradeClass

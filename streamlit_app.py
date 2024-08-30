@@ -8,6 +8,7 @@ from imblearn.over_sampling import SMOTE
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import GridSearchCV
+from sklearn.metrics import mean_squared_error, r2_score
 import pickle
 # import spacy
 

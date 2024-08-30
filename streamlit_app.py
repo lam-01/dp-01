@@ -146,7 +146,7 @@ y_pred = clf.predict(X_test)
 
 # Tính toán Mean Squared Error (MSE)
 mse = mean_squared_error(y_test, y_pred)
-print(f'Mean Squared Error (MSE): {mse}')
+st.write(mse)
 
 # Tính toán R² Score
 r2 = r2_score(y_test, y_pred)

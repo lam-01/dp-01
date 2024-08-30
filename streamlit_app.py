@@ -36,7 +36,7 @@ df_encoded = pd.get_dummies(df, columns=cat_cols, drop_first=True)
 # Khởi tạo scaler
 
 
-num_cols = ['StudyTimeWeekly', 'Absences']
+num_cols = ['StudyTimeWeekly', 'Absences','Age']
 scaler = StandardScaler()
 df_encoded[num_cols] = scaler.fit_transform(df_encoded[num_cols])
 

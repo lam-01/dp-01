@@ -13,7 +13,6 @@ import pickle
 # import spacy
 
 
-
 st.header("Phân tích và dự đoán kết quả học tập 🏨 ")
 
 

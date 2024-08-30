@@ -138,7 +138,7 @@ input_penguins = pd.concat([input_df, X], axis=0)
 
 
 # Mô hình 
-clf = RandomForestRegressor(max_depth=2, random_state=42)
+clf = RandomForestRegressor(random_state=42)
 clf.fit(X_train, y_train)
 
 # Hàm dự đoán

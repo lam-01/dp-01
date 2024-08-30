@@ -31,7 +31,7 @@ df = pd.read_csv('https://raw.githubusercontent.com/lam-01/Data/main/Student_per
 
 # Thực hiện One-Hot Encoding cho các biến phân loại
 # st.subheader("Áp dụng One-Hot Encoding cho các biến phân loại")
-cat_cols = ['Sports', 'Volunteering', 'ParentalSupport', 'Music', 'Extracurricular','Age', 'ParentalEducation', 'Tutoring', 'Ethnicity']
+cat_cols = ['Sports', 'Volunteering', 'ParentalSupport', 'Music', 'Extracurricular','Gender', 'ParentalEducation', 'Tutoring', 'Ethnicity']
 df_encoded = pd.get_dummies(df, columns=cat_cols, drop_first=True)# Khởi tạo scaler
 
 
@@ -74,6 +74,8 @@ with st.sidebar:
     gender_selected = st.selectbox('Gender', ('Male', 'Female'))
     gender_encoded = gender_map[gender_selected]
 
+    age = st.slider('Age', 15, 18, 16)
+   
     ethnicity_map = {"Caucasian": 0, "African American": 1, "Asian": 2, "Other": 3}
     ethnicity_selected = st.selectbox('Ethnicity', ('Caucasian', 'African American', 'Asian', 'Other'))
     ethnicity_encoded = ethnicity_map[ethnicity_selected]
@@ -115,6 +117,7 @@ with st.sidebar:
     # Create a DataFrame for the input features
     data = {
         'Gender': gender_encoded,
+         'Age':age,
         'Ethnicity': ethnicity_encoded,
         'ParentalEducation': parental_education_encoded,
         'Tutoring': tutoring_encoded,

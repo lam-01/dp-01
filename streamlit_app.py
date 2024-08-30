@@ -150,7 +150,7 @@ st.write(mse)
 
 # Tính toán R² Score
 r2 = r2_score(y_test, y_pred)
-print(f'R² Score: {r2}')
+st.write(r2)
 
 # Hàm dự đoán
 # def predict_gpa(mode, X_test):

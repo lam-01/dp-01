@@ -140,6 +140,16 @@ input_penguins = pd.concat([input_df, X], axis=0)
 # Mô hình 
 clf = RandomForestRegressor(random_state=42)
 clf.fit(X_train, y_train)
+# Dự đoán giá trị cho tập dữ liệu kiểm tra
+y_pred = clf.predict(X_test)
+
+# Tính toán Mean Squared Error (MSE)
+mse = mean_squared_error(y_test, y_pred)
+print(f'Mean Squared Error (MSE): {mse}')
+
+# Tính toán R² Score
+r2 = r2_score(y_test, y_pred)
+print(f'R² Score: {r2}')
 
 # Hàm dự đoán
 # def predict_gpa(mode, X_test):

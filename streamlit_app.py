@@ -31,11 +31,12 @@ df = pd.read_csv('https://raw.githubusercontent.com/lam-01/Data/main/Student_per
 
 # Thực hiện One-Hot Encoding cho các biến phân loại
 # st.subheader("Áp dụng One-Hot Encoding cho các biến phân loại")
-cat_cols = ['Sports', 'Volunteering', 'ParentalSupport', 'Music', 'Extracurricular', 'ParentalEducation', 'Gender', 'Tutoring', 'Ethnicity']
+# cat_cols = ['Sports', 'Volunteering', 'ParentalSupport', 'Music', 'Extracurricular', 'ParentalEducation', 'Gender', 'Tutoring', 'Ethnicity']
+cat_cols = ['ParentalSupport', 'ParentalEducation',  'Ethnicity']
 df_encoded = pd.get_dummies(df, columns=cat_cols, drop_first=True)# Khởi tạo scaler
 
 
-num_cols = ['StudyTimeWeekly', 'Absences']
+num_cols = ['StudyTimeWeekly', 'Absences','Age']
 scaler = StandardScaler()
 df_encoded[num_cols] = scaler.fit_transform(df_encoded[num_cols])
 
